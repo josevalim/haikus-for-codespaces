@@ -2,6 +2,10 @@
   "name": "haikus-for-codespaces",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "remoteUser": "node",
-  "forwardPorts": [3000],
-  "postStartCommand": "pgrep -f \"npm run dev\" >/dev/null || nohup npm run dev >/tmp/codespace-dev.log 2>&1 &"
+  "postStartCommand": "npm run dev &",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+        "version": "latest"
+    }
+  }
 }
