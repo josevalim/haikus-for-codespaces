@@ -1,0 +1,6 @@
+{
+  "name": "haikus-for-codespaces",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "remoteUser": "node",
+  "postStartCommand": "bash -lc 'if ! pgrep -f \"npm run dev\" >/dev/null; then nohup npm run dev >/tmp/codespace-dev.log 2>&1 & echo \"started npm run dev\"; else echo \"npm run dev already running\"; fi'"
+}
